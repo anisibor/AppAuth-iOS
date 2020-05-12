@@ -192,8 +192,7 @@ static NSString *const kTokenExchangeRequestException =
   // TODO: add a unit test to confirm exception is thrown when expected and the request is created
   //       with the correct parameters.
   if (!_authorizationCode) {
-    [NSException raise:kTokenExchangeRequestException
-                format:kTokenExchangeRequestException];
+    return NULL;
   }
   return [[OIDTokenRequest alloc] initWithConfiguration:_request.configuration
                                               grantType:OIDGrantTypeAuthorizationCode
